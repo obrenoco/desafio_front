@@ -46,6 +46,7 @@ const Header = ({
           </Typography>
         </Toolbar>
       </AppBar>
+      <Toolbar />
     </div>
   );
 };
