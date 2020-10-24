@@ -20,6 +20,7 @@ export const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+    marginTop: 65,
   },
   content: {
     flexGrow: 1,
