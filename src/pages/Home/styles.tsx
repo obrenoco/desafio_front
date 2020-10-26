@@ -43,7 +43,7 @@ export const Banner = styled.div`
 
 export const Solutions = styled.div`
   text-align: center;
-  padding: 6rem 0;
+  padding: 6rem 0 0;
   h2 {
     font-size: 30px;
     font-weight: 700;
@@ -59,7 +59,7 @@ export const Solutions = styled.div`
     height: 0.2rem;
     width: 36%;
     background: #74b61b;
-    margin: 5rem auto;
+    margin: 6rem auto 0;
   }
 `;
 
