@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Row, Input } from './styles';
+import { Container, Row, Input, Shield } from './styles';
 
 const Footer = () => {
   return (
@@ -56,6 +56,12 @@ const Footer = () => {
           </a>
         </Input>
       </Row>
+      <Shield
+        href="https://www.siteblindado.com/consumidor/selo-blindado/?language1=pt&hostname=www.siteblindado.com"
+        title="Navegue tranquilamente! Este é um Site Blindado contra ataques! Clique e confira mais detalhes."
+        target="_blank"
+        rel="noopener"
+      />
     </Container>
   );
 };
