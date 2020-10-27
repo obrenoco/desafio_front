@@ -1,9 +1,17 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Contracts from './components/Contracts';
+
+import { Container } from './styles';
 
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <Container>
+      <h2>Contratos</h2>
+      <span />
+      <Contracts />
+    </Container>
+  );
 };
 
 export default Dashboard;
