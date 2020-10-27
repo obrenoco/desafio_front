@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import MainBanner from '../../assets/images/banner/banner-blindagem.jpg';
+import MainBanner from '../../assets/images/banner/banner-trust.jpg';
 
 export const Container = styled.div``;
 
@@ -8,6 +8,7 @@ export const Banner = styled.div`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  backdrop-filter: brightness(0.68) ;
   height: 32rem;
   display: flex;
   flex-direction: column;
@@ -15,6 +16,10 @@ export const Banner = styled.div`
   text-align: left;
   color: white;
   padding: 0 5rem;
+  @media (max-width: 800px) {
+    padding: 0 2rem;
+    height: 92vh;
+  }
 
   div {
     display: flex;
@@ -38,12 +43,19 @@ export const Banner = styled.div`
     font-weight: 100;
     margin-top: 1rem;
     max-width: 50vw;
+    @media (max-width: 800px) {
+      font-size: 1.4rem;
+      max-width: 90%;
+    }
   }
 `;
 
 export const Solutions = styled.div`
   text-align: center;
   padding: 6rem 0 0;
+  @media (max-width: 800px) {
+    padding: 6rem 1rem 0;
+  }
   h2 {
     font-size: 30px;
     font-weight: 700;
@@ -62,6 +74,9 @@ export const Items = styled.div`
   margin: 4rem auto;
   padding: 0 3rem;
   max-width: 85rem;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 
   div {
     display: flex;
@@ -70,6 +85,9 @@ export const Items = styled.div`
     width: 20rem;
     padding: 0 30px;
     margin: 0 1rem;
+    @media (max-width: 800px) {
+      margin: 2rem 1rem;
+    }
   }
 
   strong {
@@ -92,7 +110,9 @@ export const Items = styled.div`
 export const Products = styled.div`
   background-color: #eeeeee;
   padding: 4rem 10rem;
-
+  @media (max-width: 800px) {
+    padding: 4rem 1.5rem;
+  }
   h2 {
     /* text-align: center; */
     font-size: 24px;
@@ -112,6 +132,9 @@ export const Grid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px 16px;
   margin: 3rem 0 5rem;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const CardItem = styled.div`
@@ -132,6 +155,15 @@ export const CardItem = styled.div`
     align-items: center;
     margin-top: 50px;
     justify-content: space-between;
+    @media (max-width: 800px) {
+      flex-direction: column;
+      a {
+        margin-top: 16px;
+      }
+      button {
+        width: 100%;
+      }
+    }
   }
   img {
     width: 32px;
