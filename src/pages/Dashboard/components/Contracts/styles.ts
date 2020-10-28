@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   margin: 2rem 0 5rem;
-
-  div:nth-child(1) {
-    margin-left: 0;
+  div:nth-child(6) {
+    background-color: #1d3300;
+  }
+  @media (max-width: 800px) {
+    grid: none;
+    grid-gap: 12px;
   }
 `;
 export const Card = styled.div`
@@ -16,6 +20,10 @@ export const Card = styled.div`
   border-radius: 5px;
   margin: 0 0.3rem;
   color: white;
+  @media (max-width: 800px) {
+    width: 95%;
+    margin: 0 auto;
+  }
 
   h3 {
     font-size: 14px;
