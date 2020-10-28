@@ -45,6 +45,7 @@
     "jest-resolve": "24.9.0",
     "jest-watch-typeahead": "0.4.0",
     "mini-css-extract-plugin": "0.8.0",
+    "mui-datatables": "^3.6.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -99,6 +100,8 @@
     ]
   },
   "devDependencies": {
+    "@types/material-ui": "^0.21.8",
+    "@types/mui-datatables": "^3.4.3",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "babel-plugin-root-import": "^6.4.1",

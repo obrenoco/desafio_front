@@ -2,7 +2,7 @@ import React from 'react';
 
 import Title from './components/Title';
 import Contracts from './components/Contracts';
-import Charts from './components/Charts';
+import Chart from './components/Chart';
 
 import { Container } from './styles';
 
@@ -13,7 +13,7 @@ const Dashboard = () => {
       <Contracts />
 
       <Title title="Dados anuais" />
-      <Charts />
+      <Chart />
     </Container>
   );
 };
