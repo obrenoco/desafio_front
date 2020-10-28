@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  margin: 2rem 0;
+  width: fit-content;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+`;
+
+export const CardsList = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  margin: 2rem 0 5rem;
   div:nth-child(6) {
     background-color: #1d3300;
   }
@@ -12,6 +19,7 @@ export const Container = styled.div`
     grid-gap: 12px;
   }
 `;
+
 export const Card = styled.div`
   width: 250px;
   height: 150px;
@@ -21,7 +29,7 @@ export const Card = styled.div`
   margin: 0 0.3rem;
   color: white;
   @media (max-width: 800px) {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -38,6 +46,21 @@ export const Value = styled.div`
   p {
     font-weight: 700;
   }
+  strong {
+    font-size: 30px;
+  }
+`;
+
+export const Total = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 32px;
+  p {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
   strong {
     font-size: 30px;
   }
