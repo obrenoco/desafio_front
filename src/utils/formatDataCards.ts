@@ -1,4 +1,7 @@
 const formatDataCards = (value: number): string =>
-  Intl.NumberFormat().format(value);
+  Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
 
 export default formatDataCards;
