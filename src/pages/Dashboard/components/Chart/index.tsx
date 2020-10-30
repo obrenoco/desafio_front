@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Recharts from 'recharts';
+import api from 'services/MockedApi';
 
 import { Container, Grid } from './styles';
 
+interface ValueProps {
+  data: {
+    dataCards: {
+      billing: {
+        monthlyBilling: number;
+      };
+      contracts: {
+        activeContracts: number;
+        overdueContracts: number;
+        overdueValue: number;
+        soldContracts: number;
+        totalContracts: number;
+        totalReceivedValue: number;
+      };
+    };
+  };
+}
+
 const Chart: React.FC = () => {
+  const [value, setValue] = useState<ValueProps>();
+
+  useEffect(() => {
+    api.get('').then(response => {
+      setValue(response.data);
+    });
+  }, []);
+
+  console.log(value);
+
   const {
     BarChart,
     Bar,
@@ -14,6 +43,7 @@ const Chart: React.FC = () => {
     Legend,
     ResponsiveContainer,
   } = Recharts;
+
   const data = [
     { name: 'Janeiro', Atrasados: 4, 'A Receber': 240, Vendidos: 240 },
     { name: 'Fevereiro', Atrasados: 3, 'A Receber': 198, Vendidos: 210 },
