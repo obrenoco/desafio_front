@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import api from 'services/MockedApi';
 import Tooltip from '../Tooltip';
 
 import { Container, CardsList, Card, Value, Total } from './styles';
 
+interface ContractProps {
+  data: {
+    dataCards: {
+      billing: {
+        monthlyBilling: number;
+      };
+      contracts: {
+        activeContracts: number;
+        overdueContracts: number;
+        overdueValue: number;
+        soldContracts: number;
+        totalContracts: number;
+        totalReceivedValue: number;
+      };
+    };
+  };
+}
+
 const Contracts: React.FC = () => {
+  const [contract, setContract] = useState<ContractProps>();
+
+  useEffect(() => {
+    api.get('').then(response => {
+      setContract(response.data);
+    });
+  }, []);
+
+  console.log(contract);
+
   return (
     <Container>
       <CardsList>
