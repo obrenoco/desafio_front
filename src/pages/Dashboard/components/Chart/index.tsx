@@ -43,40 +43,36 @@ const Chart: React.FC = () => {
   }, []);
 
   const months = [
-    '1.Janeiro',
-    '2.Fevereiro',
-    '3.Março',
-    '4.Abril',
-    '5.Maio',
-    '6.Junho',
-    '7.Julho',
-    '8.Agosto',
-    '9.Setembro',
+    '01.Janeiro',
+    '02.Fevereiro',
+    '03.Março',
+    '04.Abril',
+    '05.Maio',
+    '06.Junho',
+    '07.Julho',
+    '08.Agosto',
+    '09.Setembro',
     '10.Outubro',
     '11.Novembro',
     '12.Dezembro',
   ];
 
   const monthlyContractOverdue =
-    value?.data.dataCharts.monthlyContractOverdue.series[0];
-  const totalPaid = value?.data.dataCharts.totalPaid.series[0];
-  const totalSold = value?.data.dataCharts.totalSold.series[0];
+    value?.data?.dataCharts?.monthlyContractOverdue?.series[0];
+  const totalPaid = value?.data?.dataCharts?.totalPaid?.series[0];
+  const totalSold = value?.data?.dataCharts.totalSold.series[0];
 
   const formattedTotalPaid = totalPaid?.map(formatDataCharts);
   const formattedTotalSold = totalSold?.map(formatDataCharts);
 
-  console.log(monthlyContractOverdue);
-  console.log(formattedTotalPaid);
-  console.log(formattedTotalSold);
-  console.log(months);
-
-  const data = [
-    [5, 'R$ 590', 'R$ 350', '1.Janeiro'],
-    [6, 'R$ 664', 'R$ 250', '1.Janeiro'],
-    [7, 'R$ 590', 'R$ 870', '2.Fevereiro'],
-    [8, 'R$ 560', 'R$ 540', '3.Março'],
-    [9, 'R$ 587', 'R$ 250', '4.Abril'],
-  ];
+  const data = monthlyContractOverdue?.map((n, index) => {
+    return [
+      n,
+      formattedTotalPaid[index],
+      formattedTotalSold[index],
+      months[index],
+    ];
+  });
 
   const columns = [
     {
