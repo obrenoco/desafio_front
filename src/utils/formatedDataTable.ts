@@ -1,4 +1,4 @@
-const formatDataCharts = (value: number): string =>
+const formatDataTable = (value: number): string =>
   Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
@@ -6,4 +6,4 @@ const formatDataCharts = (value: number): string =>
     maximumFractionDigits: 2,
   }).format(value);
 
-export default formatDataCharts;
+export default formatDataTable;

@@ -4,7 +4,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 import api from 'services/MockedApi';
 
-import formatDataCharts from 'utils/formatedDataCharts';
+import formatDataTable from 'utils/formatedDataTable';
 import { Container } from './styles';
 
 interface ValuesProps {
@@ -33,7 +33,7 @@ interface ValuesProps {
   };
 }
 
-const Chart: React.FC = () => {
+const Table: React.FC = () => {
   const [value, setValues] = useState<ValuesProps>();
 
   useEffect(() => {
@@ -62,8 +62,8 @@ const Chart: React.FC = () => {
   const totalPaid = value?.data?.dataCharts?.totalPaid?.series[0];
   const totalSold = value?.data?.dataCharts.totalSold.series[0];
 
-  const formattedTotalPaid = totalPaid?.map(formatDataCharts);
-  const formattedTotalSold = totalSold?.map(formatDataCharts);
+  const formattedTotalPaid = totalPaid?.map(formatDataTable);
+  const formattedTotalSold = totalSold?.map(formatDataTable);
 
   const data = monthlyContractOverdue?.map((n, index) => {
     return [
@@ -129,4 +129,4 @@ const Chart: React.FC = () => {
   );
 };
 
-export default Chart;
+export default Table;
