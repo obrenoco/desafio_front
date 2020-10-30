@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from 'services/MockedApi';
+import formatDataCards from 'utils/formatDataCards';
 import Tooltip from '../Tooltip';
 
 import { Container, CardsList, Card, Value, Total } from './styles';
@@ -31,7 +32,22 @@ const Contracts: React.FC = () => {
     });
   }, []);
 
-  console.log(contract);
+  const monthlyBilling = contract?.data.dataCards.billing.monthlyBilling!;
+  const activeContracts = contract?.data.dataCards.contracts.activeContracts!;
+  const overdueContracts = contract?.data.dataCards.contracts.overdueContracts!;
+  const overdueValue = contract?.data.dataCards.contracts.overdueValue!;
+  const soldContracts = contract?.data.dataCards.contracts.soldContracts!;
+  const totalContracts = contract?.data.dataCards.contracts.totalContracts!;
+  const totalReceivedValue = contract?.data.dataCards.contracts
+    .totalReceivedValue!;
+
+  const formatedMonthlyBilling = formatDataCards(monthlyBilling);
+  const formatedActiveContracts = formatDataCards(activeContracts);
+  const formatedOverdueContracts = formatDataCards(overdueContracts);
+  const formatedOverdueValue = formatDataCards(overdueValue);
+  const formatedSoldContracts = formatDataCards(soldContracts);
+  const formatedTotalContracts = formatDataCards(totalContracts);
+  const formatedReceivedValue = formatDataCards(totalReceivedValue);
 
   return (
     <Container>
@@ -41,7 +57,7 @@ const Contracts: React.FC = () => {
           <h3>Ativos</h3>
           <Value>
             <p>R$</p>
-            <strong>200.000,00</strong>
+            <strong>{formatedActiveContracts}</strong>
           </Value>
         </Card>
 
@@ -50,7 +66,7 @@ const Contracts: React.FC = () => {
           <h3>Contratos atrasados</h3>
           <Value>
             <p>R$</p>
-            <strong>200.000,00</strong>
+            <strong>{formatedOverdueContracts}</strong>
           </Value>
         </Card>
 
@@ -59,7 +75,7 @@ const Contracts: React.FC = () => {
           <h3>Valor atrasado</h3>
           <Value>
             <p>R$</p>
-            <strong>200.000,00</strong>
+            <strong>{formatedOverdueValue}</strong>
           </Value>
         </Card>
 
@@ -68,7 +84,7 @@ const Contracts: React.FC = () => {
           <h3>Contratos novos</h3>
           <Value>
             <p>R$</p>
-            <strong>200.000,00</strong>
+            <strong>{formatedSoldContracts}</strong>
           </Value>
         </Card>
 
@@ -77,7 +93,7 @@ const Contracts: React.FC = () => {
           <h3>Valores novos</h3>
           <Value>
             <p>R$</p>
-            <strong>200.000,00</strong>
+            <strong>{formatedTotalContracts}</strong>
           </Value>
         </Card>
 
@@ -86,14 +102,14 @@ const Contracts: React.FC = () => {
           <h3>Total à receber</h3>
           <Value>
             <p>R$</p>
-            <strong>200.000,00</strong>
+            <strong>{formatedReceivedValue}</strong>
           </Value>
         </Card>
       </CardsList>
 
       <Total>
         <p>Total recebido no último mês</p>
-        <strong>R$ 300.000,00</strong>
+        <strong>R$ {formatedMonthlyBilling}</strong>
       </Total>
     </Container>
   );
