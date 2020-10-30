@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 2rem 0;
+  margin: 2rem 0 5rem;
   width: fit-content;
   @media (max-width: 800px) {
     width: 100%;
