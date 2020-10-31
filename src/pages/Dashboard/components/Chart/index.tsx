@@ -80,8 +80,8 @@ const Chart: React.FC = () => {
     return {
       name: x[0],
       Atrasados: x[1],
-      Vendidos: x[2],
       Pago: x[3],
+      Vendidos: x[2],
     };
   });
 
