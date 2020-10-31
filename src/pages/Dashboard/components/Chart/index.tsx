@@ -6,33 +6,31 @@ import { Container, Grid } from './styles';
 
 interface ValueProps {
   data: {
-    dataCards: {
-      billing: {
-        monthlyBilling: number;
+    dataCharts: {
+      monthlyContractOverdue: {
+        labels: string[];
+        series: number[][];
+        totalOverdueValue: number;
       };
-      contracts: {
-        activeContracts: number;
-        overdueContracts: number;
-        overdueValue: number;
-        soldContracts: number;
-        totalContracts: number;
-        totalReceivedValue: number;
+      totalPaid: {
+        labels: string[];
+        series: number[][];
+        totalOverdueValue: number;
       };
+      totalSold: {
+        labels: string[];
+        series: number[][];
+        totalOverdueValue: number;
+      };
+    };
+    reference: {
+      referenceMonth: 'string';
+      referenceYear: 'string';
     };
   };
 }
 
 const Chart: React.FC = () => {
-  const [value, setValue] = useState<ValueProps>();
-
-  useEffect(() => {
-    api.get('').then(response => {
-      setValue(response.data);
-    });
-  }, []);
-
-  console.log(value);
-
   const {
     BarChart,
     Bar,
@@ -44,24 +42,52 @@ const Chart: React.FC = () => {
     ResponsiveContainer,
   } = Recharts;
 
-  const data = [
-    { name: 'Janeiro', Atrasados: 4, 'A Receber': 240, Vendidos: 240 },
-    { name: 'Fevereiro', Atrasados: 3, 'A Receber': 198, Vendidos: 210 },
-    { name: 'Março', Atrasados: 2, 'A Receber': 980, Vendidos: 220 },
-    { name: 'Abril', Atrasados: 2, 'A Receber': 390, Vendidos: 200 },
-    { name: 'Maio', Atrasados: 1, 'A Receber': 480, Vendidos: 218 },
-    { name: 'Junho', Atrasados: 2, 'A Receber': 380, Vendidos: 250 },
-    { name: 'Julho', Atrasados: 3, 'A Receber': 430, Vendidos: 210 },
-    { name: 'Agosto', Atrasados: 2, 'A Receber': 308, Vendidos: 200 },
-    { name: 'Setembro', Atrasados: 1, 'A Receber': 400, Vendidos: 281 },
-    { name: 'Outubro', Atrasados: 2, 'A Receber': 380, Vendidos: 200 },
-    { name: 'Novembro', Atrasados: 3, 'A Receber': 430, Vendidos: 200 },
-    { name: 'Dezembro', Atrasados: 2, 'A Receber': 398, Vendidos: 200 },
+  const [value, setValue] = useState<ValueProps>();
+
+  useEffect(() => {
+    api.get('').then(response => {
+      setValue(response.data);
+    });
+  }, []);
+
+  const referenceYearAndMonth = `${value?.data.reference.referenceMonth} ${value?.data.reference.referenceYear}`;
+
+  const months = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
   ];
+
+  const monthlyContractOverdue =
+    value?.data?.dataCharts?.monthlyContractOverdue?.series[0];
+  const totalPaid = value?.data?.dataCharts?.totalPaid?.series[0];
+  const totalSold = value?.data?.dataCharts?.totalSold?.series[0];
+
+  const convertedValues = monthlyContractOverdue?.map((n, index) => {
+    return [months[index], n, totalSold[index], totalPaid[index]];
+  });
+
+  const data = convertedValues?.map(x => {
+    return {
+      name: x[0],
+      Atrasados: x[1],
+      Vendidos: x[2],
+      Pago: x[3],
+    };
+  });
 
   return (
     <Container>
-      <h2>Dezembro 2020</h2>
+      <h2>{referenceYearAndMonth}</h2>
       <Grid>
         <ResponsiveContainer width="100%" height={800}>
           <BarChart data={data}>
@@ -81,7 +107,7 @@ const Chart: React.FC = () => {
             <Tooltip />
             <Legend />
             <Bar dataKey="Vendidos" fill="#1D3304" />
-            <Bar dataKey="A Receber" fill="#447915" />
+            <Bar dataKey="Pago" fill="#447915" />
           </BarChart>
         </ResponsiveContainer>
       </Grid>
