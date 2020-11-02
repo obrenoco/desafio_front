@@ -10,7 +10,7 @@ import { Container } from './styles';
 
 const Table: React.FC = () => {
   const [value, setValues] = useState<DataProps>(() => {
-    const storagedValues = localStorage.getItem('@SiteBlindado:values');
+    const storagedValues = localStorage.getItem('@SiteBlindado:table');
 
     if (storagedValues) {
       return JSON.parse(storagedValues);
@@ -19,7 +19,7 @@ const Table: React.FC = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem('@SiteBlindado:values', JSON.stringify(value));
+    localStorage.setItem('@SiteBlindado:table', JSON.stringify(value));
   }, [value]);
 
   useEffect(() => {
@@ -105,7 +105,7 @@ const Table: React.FC = () => {
     <Container>
       <MuiThemeProvider theme={theme}>
         <MUIDataTable
-          title={`${value?.data.reference.referenceMonth} ${value?.data.reference.referenceYear}`}
+          title={`${value?.data?.reference.referenceMonth} ${value?.data?.reference.referenceYear}`}
           data={data}
           columns={columns}
           options={options}
