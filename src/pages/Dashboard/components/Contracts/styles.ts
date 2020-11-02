@@ -44,6 +44,7 @@ export const Value = styled.div`
   margin: 1.3rem 0 0;
   p {
     font-weight: 700;
+    margin-right: 6px;
   }
   strong {
     font-size: 30px;
