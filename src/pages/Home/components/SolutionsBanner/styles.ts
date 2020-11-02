@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Solutions = styled.div`
   text-align: center;
-  padding: 6rem 0 0;
+  padding: 4rem 0;
+  background-color: #fff;
   @media (max-width: 800px) {
     padding: 6rem 1rem 0;
   }
@@ -21,7 +22,7 @@ export const Items = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4rem auto;
+  margin: 4rem auto 0;
   padding: 0 3rem;
   max-width: 85rem;
   @media (max-width: 800px) {

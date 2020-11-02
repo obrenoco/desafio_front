@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 2rem 0 5rem;
+  margin: 2rem auto 5rem;
   width: fit-content;
   @media (max-width: 800px) {
     width: 100%;
@@ -21,9 +21,8 @@ export const CardsList = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 250px;
   height: 150px;
-  padding: 30px;
+  padding: 32px;
   background-color: #447900;
   border-radius: 5px;
   margin: 0 0.3rem;

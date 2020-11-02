@@ -4,7 +4,7 @@ export const Products = styled.div`
   background-color: #eeeeee;
   padding: 4rem 10rem;
   @media (max-width: 800px) {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1.5rem 0;
   }
   h2 {
     /* text-align: center; */
@@ -14,7 +14,7 @@ export const Products = styled.div`
   span {
     display: block;
     height: 0.2rem;
-    width: 4%;
+    width: 85px;
     background: #74b61b;
     margin: 0.5rem 0;
   }

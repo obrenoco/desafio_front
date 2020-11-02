@@ -11,4 +11,8 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 1rem 0;
+  @media (max-width: 800px) {
+    grid-template-columns: none;
+    grid-gap: 2rem;
+  }
 `;
