@@ -17,7 +17,18 @@ const Chart: React.FC = () => {
     ResponsiveContainer,
   } = Recharts;
 
-  const [value, setValue] = useState<DataProps>();
+  const [value, setValue] = useState<DataProps>(() => {
+    const storagedValues = localStorage.getItem('@SiteBlindado:chart');
+
+    if (storagedValues) {
+      return JSON.parse(storagedValues);
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('@SiteBlindado:chart', JSON.stringify(value));
+  }, [value]);
 
   useEffect(() => {
     api.get('').then(response => {
@@ -25,7 +36,7 @@ const Chart: React.FC = () => {
     });
   }, []);
 
-  const referenceYearAndMonth = `${value?.data.reference.referenceMonth} ${value?.data.reference.referenceYear}`;
+  const referenceYearAndMonth = `${value?.data?.reference.referenceMonth} ${value?.data?.reference.referenceYear}`;
 
   const months = [
     'Janeiro',

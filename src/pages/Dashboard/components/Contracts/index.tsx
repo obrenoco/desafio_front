@@ -7,7 +7,18 @@ import Tooltip from '../Tooltip';
 import { Container, CardsList, Card, Value, Total } from './styles';
 
 const Contracts: React.FC = () => {
-  const [contract, setContract] = useState<DataProps>();
+  const [contract, setContract] = useState<DataProps>(() => {
+    const storagedContracts = localStorage.getItem('@SiteBlindado:contracts');
+
+    if (storagedContracts) {
+      return JSON.parse(storagedContracts);
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('@SiteBlindado:contracts', JSON.stringify(contract));
+  }, [contract]);
 
   useEffect(() => {
     api.get('').then(response => {
@@ -15,13 +26,14 @@ const Contracts: React.FC = () => {
     });
   }, []);
 
-  const monthlyBilling = contract?.data.dataCards.billing.monthlyBilling!;
-  const activeContracts = contract?.data.dataCards.contracts.activeContracts!;
-  const overdueContracts = contract?.data.dataCards.contracts.overdueContracts!;
-  const overdueValue = contract?.data.dataCards.contracts.overdueValue!;
-  const soldContracts = contract?.data.dataCards.contracts.soldContracts!;
-  const totalContracts = contract?.data.dataCards.contracts.totalContracts!;
-  const totalReceivedValue = contract?.data.dataCards.contracts
+  const monthlyBilling = contract?.data?.dataCards.billing.monthlyBilling!;
+  const activeContracts = contract?.data?.dataCards.contracts.activeContracts!;
+  const overdueContracts = contract?.data?.dataCards.contracts
+    .overdueContracts!;
+  const overdueValue = contract?.data?.dataCards.contracts.overdueValue!;
+  const soldContracts = contract?.data?.dataCards.contracts.soldContracts!;
+  const totalContracts = contract?.data?.dataCards.contracts.totalContracts!;
+  const totalReceivedValue = contract?.data?.dataCards.contracts
     .totalReceivedValue!;
 
   const formatedMonthlyBilling = formatDataCards(monthlyBilling);

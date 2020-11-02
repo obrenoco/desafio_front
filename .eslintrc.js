@@ -14,6 +14,7 @@ module.exports = {
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    "localStorage": true,
   },
   parserOptions: {
     ecmaVersion: 2018,
@@ -31,7 +32,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/interface-name-prefix': 'off'
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off'
   },
   settings: {
     'import/parsers': {

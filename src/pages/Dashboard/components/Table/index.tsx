@@ -9,7 +9,18 @@ import { DataProps } from 'interfaces';
 import { Container } from './styles';
 
 const Table: React.FC = () => {
-  const [value, setValues] = useState<DataProps>();
+  const [value, setValues] = useState<DataProps>(() => {
+    const storagedValues = localStorage.getItem('@SiteBlindado:values');
+
+    if (storagedValues) {
+      return JSON.parse(storagedValues);
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('@SiteBlindado:values', JSON.stringify(value));
+  }, [value]);
 
   useEffect(() => {
     api.get('').then(response => {
