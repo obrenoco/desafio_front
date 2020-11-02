@@ -2,33 +2,8 @@ import React, { useEffect, useState } from 'react';
 import * as Recharts from 'recharts';
 import api from 'services/MockedApi';
 
+import { DataProps } from 'interfaces';
 import { Container, Grid } from './styles';
-
-interface ValueProps {
-  data: {
-    dataCharts: {
-      monthlyContractOverdue: {
-        labels: string[];
-        series: number[][];
-        totalOverdueValue: number;
-      };
-      totalPaid: {
-        labels: string[];
-        series: number[][];
-        totalOverdueValue: number;
-      };
-      totalSold: {
-        labels: string[];
-        series: number[][];
-        totalOverdueValue: number;
-      };
-    };
-    reference: {
-      referenceMonth: 'string';
-      referenceYear: 'string';
-    };
-  };
-}
 
 const Chart: React.FC = () => {
   const {
@@ -42,7 +17,7 @@ const Chart: React.FC = () => {
     ResponsiveContainer,
   } = Recharts;
 
-  const [value, setValue] = useState<ValueProps>();
+  const [value, setValue] = useState<DataProps>();
 
   useEffect(() => {
     api.get('').then(response => {

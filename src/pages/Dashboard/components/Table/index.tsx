@@ -5,36 +5,11 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import api from 'services/MockedApi';
 
 import formatDataTable from 'utils/formatedDataTable';
+import { DataProps } from 'interfaces';
 import { Container } from './styles';
 
-interface ValuesProps {
-  data: {
-    dataCharts: {
-      monthlyContractOverdue: {
-        labels: string[];
-        series: number[][];
-        totalOverdueValue: number;
-      };
-      totalPaid: {
-        labels: string[];
-        series: number[][];
-        totalOverdueValue: number;
-      };
-      totalSold: {
-        labels: string[];
-        series: number[][];
-        totalOverdueValue: number;
-      };
-    };
-    reference: {
-      referenceMonth: 'string';
-      referenceYear: 'string';
-    };
-  };
-}
-
 const Table: React.FC = () => {
-  const [value, setValues] = useState<ValuesProps>();
+  const [value, setValues] = useState<DataProps>();
 
   useEffect(() => {
     api.get('').then(response => {

@@ -1,30 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import api from 'services/MockedApi';
 import formatDataCards from 'utils/formatDataCards';
+import { DataProps } from 'interfaces';
 import Tooltip from '../Tooltip';
 
 import { Container, CardsList, Card, Value, Total } from './styles';
 
-interface ContractProps {
-  data: {
-    dataCards: {
-      billing: {
-        monthlyBilling: number;
-      };
-      contracts: {
-        activeContracts: number;
-        overdueContracts: number;
-        overdueValue: number;
-        soldContracts: number;
-        totalContracts: number;
-        totalReceivedValue: number;
-      };
-    };
-  };
-}
-
 const Contracts: React.FC = () => {
-  const [contract, setContract] = useState<ContractProps>();
+  const [contract, setContract] = useState<DataProps>();
 
   useEffect(() => {
     api.get('').then(response => {
