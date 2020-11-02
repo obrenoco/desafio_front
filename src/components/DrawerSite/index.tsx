@@ -71,7 +71,7 @@ const MenuBar = ({
         <div>
           <List>
             <ListItem key="menuHeading" divider disableGutters>
-              <ListItemText inset primary="Nested Menu" />
+              <ListItemText inset primary="Site Blindado" />
             </ListItem>
             {handler(menuItems.data)}
             <Divider />

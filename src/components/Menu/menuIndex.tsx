@@ -2,34 +2,34 @@ const menuIndex = {
   data: [
     {
       name: 'Dashboard',
-      url: '/item1',
+      url: '/dashboard',
     },
     {
       name: 'Certificados SSL',
-      url: '/item1',
+      url: '/',
     },
     {
       name: 'Blindagem de site',
-      url: '/item1',
+      url: '/',
     },
     {
       name: 'Loja',
-      url: '/item2',
+      url: '/',
     },
     {
       name: 'WAF',
       children: [
         {
-          name: 'Child31',
-          url: '/child31',
+          name: 'Starter',
+          url: '/',
         },
         {
-          name: 'Child32',
-          url: '/child32',
+          name: 'Pro',
+          url: '/',
         },
         {
-          name: 'Child33',
-          url: '/child33',
+          name: 'Enterprise',
+          url: '/',
         },
       ],
     },
@@ -37,20 +37,11 @@ const menuIndex = {
   system: [
     {
       name: 'Sistema',
-      url: '/item1',
+      url: '/',
     },
     {
       name: 'Organizações',
-      children: [
-        {
-          name: 'Child41',
-          url: '/child41',
-        },
-        {
-          name: 'Child42',
-          url: '/child42',
-        },
-      ],
+      url: '/',
     },
   ],
 };
