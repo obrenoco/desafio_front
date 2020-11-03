@@ -1,134 +1,107 @@
-# **SB2W-Teste**
+<h3 align="center">
+  <img src="https://i.imgur.com/LowEEdR.png" width="300px"/>
+</h3> 
+<p align="center"><strong> Desafio Front-End da Site Blindado, uma empresa do grupo B2W digital.</strong></p>
 
-## **Intro**
+<p  align="center">
+  <a  href="">
+  <img  src="https://img.shields.io/github/stars/siteblindado/desafio_front"/>
+  </a>
+  <img  src="https://img.shields.io/github/forks/siteblindado/desafio_front"/>
+  </>
+</p>
 
-Bem vindo ao teste da Site Blindado, uma empresa do grupo B2W digital.  
-Neste teste vamos tentar entender um pouco qual o seu nivel de conhecimento de React.js.  
-Nao se assuste, caso tenha alguma dificuldade ou duvida pode entrar em contato com guilherme.brein@siteblindado.com.
+<p align="center">
+  <img src ="https://media.giphy.com/media/vFY003FjYHpJsoFk95/giphy.gif" width="500px"  />
+</p>
 
-Faça um fork desse projeto e desenvolva seu código nele.  
-Utilize o README para nos passar quaisquer informações que julgar interessante/necessárias (como rodar o projeto, decisões tomadas, etc).
-  
-Não definimos um tempo para o desafio ser feito, é você quem deve nos passar uma data limite para a entrega do desafio.
 
-## **Guia**
+# :pushpin: Roadmap
 
-### - Recupere os dados
-Na pasta /services/MockedApi.tsx temos uma conexão pronta com dados mocados.
+* [:rocket: Features](#rocket-features)
 
-### - Crie os reducers/sagas/actions para utilizar os dados da api
-Dentro da pasta store você pode encontrar o que precisa.
+* [:robot: Tecnologias](#robot-tecnologias)
 
-### - Corrija o Css para exibição dentro da janela
-Se você perceber as informações novas estão sendo impressas no abaixo do cabeçalho, corrija para uma exibição correta.
+* [:construction_worker: Instalação](#construction_worker-instalação)
 
-### - Crie um dashboard com estes dados
-Utilizando estes dados recuperados, queremos ver um dashboard na pagina principal com estas informações.
-Dados que retornam desta API:
-```json
-{
-  "dataCards": "informações bacanas pra você montar alguns cards" {
-    "billing": {
-      "monthlyBilling": "valor recebido no ultimo mês",
-    },
-    "contracts": "informações de contratos" {
-      "activeContracts": "contratos ativos no mes corrente",
-      "overdueContracts": "contratos com pagamento atrasado a receber no mes corrente",
-      "overdueValue": "valor atrasado a receber no mes corrente",
-      "soldContracts": "contratos novos fechados no mes corrente",
-      "totalContracts": "valor de contratos novos fecahdos no mes corrente",
-      "totalReceivedValue": "total de valor a receber no mes corrente"
-    }
-  },
-  "dataCharts": {
-            "monthlyContractOverdue": "informações mes a mes de contratos atrasados",
-            "totalPaid": "total de valor a receber mes a mes",
-            "totalSold": "total de valor novo vendido a receber mes a mes",
-            "reference": "data a considerar como corrente (Dez/2020)"
-  }
-}
+* [:bug: Encontrou um bug? Faltando uma feature específica?](#bug-issues)
 
-```
+* [:closed_book: License](#closed_book-license)
 
-### - Crie uma vitrine para nossos produtos
-Na pagina da [Site Blindado](http://www.siteblindado.com), em soluções, você pode encontrar a listagem dos nossos produtos.  
-Desenvolva uma vitrine onde o usuário poderá adquirir produtos. Não precisa ser igual a da imagem.
-  
-![alt text](https://i.ibb.co/v1nKJ44/Captura-de-tela-de-2020-10-08-16-31-13.png)
 
-## **Pontos Extras**
+<br />
 
-### - Menu animado como no Gmail
-Deixe nosso menu como o da imagem abaixo quando não estiver aberto.  
+# :rocket: Features
 
-![alt text](https://i.ibb.co/K0ydRFP/gmail.gif)
+<p>🔥 Vitrine virtual com os produtos da Site Blindado</p>
+<p>🔥 Dashboard interativa do usuário</p>
 
-## **O que gostariamos de ver neste projeto?**
-- React Hooks
-- Sagas/Reducers/Actions bem montados
-- Organização
-- Componentes bem escritos e organizados
-- Um dashboard bonitão! Use a sua criatividade
-- Testes
 
-## **Tecnologias**
+<br />
 
-### - Visual Patterns
+## :robot: Tecnologias
 
-- Styled Components - Padrão de Desenvolvimento de CSS - https://www.styled-components.com/
-- Material Design UI - Padrão de Desenvolvimento de CSS - https://material-ui.com/pt/
+- [x] React
+- [x] Styled Components
+- [x] Material UI
+- [x] React Hooks
+- [x] Axios
+- [x] Redux / Saga
 
-### - Code Patterns
 
-- React.Js - Framework Utilizado - https://pt-br.reactjs.org/
-- Typescript - Linguagem Utilizada - https://www.typescriptlang.org/
-- Duck Pattern - Padrão de Escrita para REDUX - https://github.com/erikras/ducks-modular-redux
-- TsLint - Padrão de Verificação de Analise de Formatação de Código
+<br />
 
-### - Testes
+# :construction_worker: Instalação
 
-- Storybook - Padrão de Documentação e Testes de Componentes - https://storybook.js.org/docs/guides/guide-react/
-- Jest - Padrão de Testes - https://jestjs.io/
 
-### - State/Store Pattern
+URLs SSH fornecem acesso a um repositório Git via SSH, um protocolo seguro. Se você usar uma chave SSH registrada em sua conta do Github, clone o projeto usando este comando:
 
-- REDUX - Padrão de Desenvolvimento de Store - https://redux.js.org/
-- REDUX SAGA - Middleware de Gerenciamento de Actions Assincronas - https://redux-saga.js.org/
-- REDUX SAUCE - Fornece Ferramentas de Organização de Código para REDUX - https://github.com/jkeam/reduxsauce
 
-### - Fetch
+```git clone git@github.com:obrenoco/desafio_front```
 
-- Axios - Requisitor HTTP baseado em Promisses - https://github.com/axios/axios
 
-## **Quick-start**
+Apos fazer o clone, rode no seu terminal:`yarn install`.<br />
 
-1. Instalar Yarn
-`npm install yarn -g`
+e em seguida `yarn start`
 
-2. Git Clone 
-`git clone git@bitbucket.org:siteblindado/sb2w-portal.git`
+<br/>
+3. Rodar Build de Produção yarn build
 
-3. Startar Servidor Dev
-`yarn start`
+4. Rodar Suite de Testes `yarn test`
 
-4. Rodar Build de Produção
-`yarn build`
+5. Rodar Linter `yarn lint`
 
-5. Rodar Suite de Testes
-`yarn test`
+6. Rodar o Formatador de Código `yarn format`
 
-6. Rodar Linter
-`yarn lint`
+7. Inicializar Ferramenta de Inspeção de Bundle `yarn bundle-profile:analyze`
 
-7. Rodar o Formatador de Código
-`yarn format`
+   
+<br />
 
-8. Inicializar Ferramenta de Inspeção de Bundle
-`yarn bundle-profile:analyze`
 
-## **Configuraçõees**
 
-* [TypeScript Config](./tsconfig.json)
-* [Webpack Config](./config/webpack.config.js)
-* [Editor Config](./.editorconfig)
-* [EsLint Config](./.eslintrc.js)
+# :bug: Issues
+
+
+
+Feel free to **file a new issue** with a respective title and description on this repository. If you already found a solution to your problem, **Don't miss out too and come help :)**!
+
+
+
+<br />
+
+
+
+
+
+
+
+
+<br/>
+
+# :closed_book: License
+
+
+Released in 2020.
+
+Made with love by [Breno Romeiro](https://github.com/obrenoco) 💜🚀
