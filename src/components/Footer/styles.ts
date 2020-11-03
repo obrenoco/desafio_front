@@ -67,7 +67,7 @@ export const Shield = styled.a`
   width: 120px;
   height: 50px;
   right: 30px;
-  bottom: 50px;
+  bottom: 15px;
   cursor: pointer;
   display: block;
   text-decoration: none;
